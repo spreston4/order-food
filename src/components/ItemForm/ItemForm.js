@@ -12,13 +12,18 @@ const ItemForm = (props) => {
   const addItemHandler = (event) => {
     event.preventDefault();
 
+    if (quantity < 1) {
+      console.log("Enter a valid quantity");
+      setQuantity(0);
+      return;
+    }
+
     const newItem = {
       ...props.item,
       quantity: quantity,
     };
 
     props.onAddToCart(newItem);
-
     setQuantity(0);
   };
 
