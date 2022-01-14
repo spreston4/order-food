@@ -1,4 +1,5 @@
 import styles from "./MenuItem.module.css";
+import ItemForm from "../ItemForm/ItemForm";
 
 const MenuItem = (props) => {
   return (
@@ -9,7 +10,7 @@ const MenuItem = (props) => {
         <p className={styles.price}>{props.price}</p>
       </div>
       <div>
-        <p>Add Component</p>
+        <ItemForm />
       </div>
     </div>
   );
