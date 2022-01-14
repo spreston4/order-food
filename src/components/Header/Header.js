@@ -3,7 +3,6 @@ import CartButton from "../CartButton/CartButton";
 import mealPhoto from "./meals.jpg";
 
 const Header = (props) => {
-
   const cartButtonHandler = () => {
     props.onViewCart();
   };

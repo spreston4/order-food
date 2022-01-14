@@ -30,15 +30,14 @@ const dummyMealData = [
 ];
 
 const Menu = (props) => {
+  const addItemHandler = (item) => {
+    props.onAddToCart(item);
+  };
+
   return (
     <Card className={styles.menu}>
       {dummyMealData.map((meal) => (
-        <MenuItem
-          key={meal.id}
-          name={meal.name}
-          description={meal.description}
-          price={meal.price}
-        />
+        <MenuItem key={meal.id} item={meal} onAddToCart={addItemHandler} />
       ))}
     </Card>
   );

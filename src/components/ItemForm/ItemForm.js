@@ -6,12 +6,20 @@ const ItemForm = (props) => {
   const [quantity, setQuantity] = useState(0);
 
   const quantityHandler = (event) => {
-    console.log(event.target.value);
     setQuantity(event.target.value);
   };
 
   const addItemHandler = (event) => {
     event.preventDefault();
+
+    const newItem = {
+      ...props.item,
+      quantity: quantity,
+    };
+
+    props.onAddToCart(newItem);
+
+    setQuantity(0);
   };
 
   return (

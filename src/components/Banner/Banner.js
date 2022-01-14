@@ -3,7 +3,7 @@ import Card from "../UI/Card/Card";
 
 const Banner = () => {
   return (
-    <Card className={styles.banner} style={{backgroundColor: '#323032'}}>
+    <Card className={styles.banner}>
       <h2>Delicious Food, Delivered To You</h2>
       <div>
         <p>
