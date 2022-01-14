@@ -1,0 +1,26 @@
+.cart {
+  font-size: large;
+}
+
+.amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.close {
+  color: #8a2b06 !important;
+  background-color: #ffffff !important;
+  margin-right: 1rem;
+}
+.close:hover,
+.close:active {
+  background-color: #e7e7e7 !important;
+}

@@ -5,6 +5,7 @@
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  background-color: #323032;
+  background-color: #323032 !important;
   color: #ffffff;
+  z-index: 2;
 }

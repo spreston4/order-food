@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 
 const Banner = () => {
   return (
-    <Card className={styles.banner}>
+    <Card className={styles.banner} style={{backgroundColor: '#323032'}}>
       <h2>Delicious Food, Delivered To You</h2>
       <div>
         <p>

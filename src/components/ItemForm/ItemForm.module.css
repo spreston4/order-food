@@ -9,21 +9,6 @@
 .form input {
   width: 3rem;
   margin-left: 0.5rem;
-}
-
-.form button {
-  cursor: pointer;
-  background-color: #8a2b06;
-  border: 1px solid #8a2b06;
-  color: white;
-  padding: 0.25rem 2rem;
-  border-radius: 20px;
-  font-weight: bold;
-  margin-top: 0.5rem;
-}
-
-.form button:hover,
-.form button:active {
-  background-color: #641e03;
-  border-color: #641e03;
+  border-radius: 3px;
+  border: 1px solid black;
 }

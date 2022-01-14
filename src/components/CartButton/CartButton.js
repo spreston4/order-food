@@ -3,7 +3,7 @@ import CartIcon from "../CartIcon/CartIcon";
 
 const CartButton = (props) => {
   return (
-    <button type="button" className={styles.button}>
+    <button type="button" className={styles.button} onClick={props.onViewCart}>
       <CartIcon className="icon" />
       <span>Your Cart</span>
       <span className={styles.badge}>1</span>

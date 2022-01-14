@@ -1,7 +1,6 @@
 .content {
   margin-top: 13rem;
   position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
