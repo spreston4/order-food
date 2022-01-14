@@ -1,6 +1,5 @@
 import styles from "./MenuItem.module.css";
 import ItemForm from "../ItemForm/ItemForm";
-import Modal from "../Modal/Modal";
 
 const MenuItem = (props) => {
   return (

@@ -1,5 +1,5 @@
 import styles from "./Banner.module.css";
-import Card from "../Card/Card";
+import Card from "../UI/Card/Card";
 
 const Banner = () => {
   return (

@@ -1,6 +1,6 @@
 import styles from "./Cart.module.css";
-import Modal from "../Modal/Modal";
-import Button from "../Button/Button";
+import Modal from "../UI/Modal/Modal";
+import Button from "../UI/Button/Button";
 
 const Cart = (props) => {
   const closeButtonHandler = () => {

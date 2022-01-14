@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./ItemForm.module.css";
-import Button from "../Button/Button";
+import Button from "../UI/Button/Button";
 
 const ItemForm = (props) => {
   const [quantity, setQuantity] = useState(0);

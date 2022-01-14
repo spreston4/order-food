@@ -1,5 +1,5 @@
 import styles from "./Menu.module.css";
-import Card from "../Card/Card";
+import Card from "../UI/Card/Card";
 import MenuItem from "../MenuItem/MenuItem";
 
 const dummyMealData = [
