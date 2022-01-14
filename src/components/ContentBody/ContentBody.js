@@ -18,13 +18,17 @@ const ContentBody = (props) => {
   };
 
   const addItemHandler = (item) => {
-    console.log("Item added to cart");
-    console.log(item);
+    
+    setCartContents((prevContents) => {
+      return [...prevContents, item];
+    });
+
+    console.log(cartContents);
   };
 
   return (
     <div className={styles.content}>
-      {viewCart && <Cart onCloseCart={closeCartHandler} />}
+      {viewCart && <Cart onCloseCart={closeCartHandler} contents={cartContents} />}
       <Header onViewCart={viewCartHandler} />
       <Banner />
       <Menu onAddToCart={addItemHandler} />

@@ -1,8 +1,10 @@
 import styles from "./Cart.module.css";
 import Modal from "../UI/Modal/Modal";
 import Button from "../UI/Button/Button";
+import CartItem from "../CartItem/CartItem";
 
 const Cart = (props) => {
+
   const closeButtonHandler = () => {
     props.onCloseCart();
   };
@@ -11,10 +13,14 @@ const Cart = (props) => {
     console.log("Food Ordered.");
   };
 
+
+
   return (
     <Modal className={styles.cart}>
       <div>
-        <p>Cart Items</p>
+        {props.contents.map((item) => (
+            <CartItem key={item.id} item={item}/>
+        ))}
       </div>
       <div className={styles.amount}>
         <h2>Total Amount</h2>

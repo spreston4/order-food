@@ -1,0 +1,38 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #8a2b06;
+}
+
+.item p {
+  margin-top: 0;
+}
+
+.detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: small;
+  font-weight: bold;
+}
+
+.detail p {
+  margin-right: 1.5rem;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.price {
+  color: #8a2b06;
+}
+
+.quantity {
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  padding: 0.1rem 0.5rem;
+}
