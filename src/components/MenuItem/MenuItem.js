@@ -4,9 +4,9 @@ const MenuItem = (props) => {
   return (
     <div className={styles.item}>
       <div>
-        <p className={styles.name}>Food Item</p>
-        <p className={styles.description}>Food Description</p>
-        <p className={styles.price}>Price</p>
+        <p className={styles.name}>{props.name}</p>
+        <p className={styles.description}>{props.description}</p>
+        <p className={styles.price}>{props.price}</p>
       </div>
       <div>
         <p>Add Component</p>
