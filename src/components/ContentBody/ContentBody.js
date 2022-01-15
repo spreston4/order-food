@@ -18,7 +18,6 @@ const ContentBody = (props) => {
   };
 
   const addItemHandler = (item) => {
-    
     setCartContents((prevContents) => {
       return [...prevContents, item];
     });
@@ -28,7 +27,9 @@ const ContentBody = (props) => {
 
   return (
     <div className={styles.content}>
-      {viewCart && <Cart onCloseCart={closeCartHandler} contents={cartContents} />}
+      {viewCart && (
+        <Cart onCloseCart={closeCartHandler} contents={cartContents} />
+      )}
       <Header onViewCart={viewCartHandler} />
       <Banner />
       <Menu onAddToCart={addItemHandler} />

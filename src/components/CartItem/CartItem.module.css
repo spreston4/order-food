@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #8a2b06;
+  margin-top: 0.5rem;
 }
 
 .item p {

@@ -4,7 +4,7 @@ import Button from "../UI/Button/Button";
 import CartItem from "../CartItem/CartItem";
 
 const Cart = (props) => {
-
+  // handle button presses
   const closeButtonHandler = () => {
     props.onCloseCart();
   };
@@ -13,18 +13,21 @@ const Cart = (props) => {
     console.log("Food Ordered.");
   };
 
-
+  // calculate total value of cart
+  const totalAmount = props.contents
+    .map((item) => item.quantity * item.price)
+    .reduce((prev, next) => prev + next);
 
   return (
     <Modal className={styles.cart}>
       <div>
         {props.contents.map((item) => (
-            <CartItem key={item.id} item={item}/>
+          <CartItem key={item.id} item={item} />
         ))}
       </div>
       <div className={styles.amount}>
         <h2>Total Amount</h2>
-        <h2>$33.00</h2>
+        <h2>{totalAmount}</h2>
       </div>
       <div className={styles.controls}>
         <Button onClick={closeButtonHandler} className={styles.close}>
