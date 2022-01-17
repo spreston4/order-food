@@ -4,11 +4,7 @@ import Button from "../UI/Button/Button";
 import CartItem from "../CartItem/CartItem";
 
 const Cart = (props) => {
-  // handle button presses
-  const closeButtonHandler = () => {
-    props.onCloseCart();
-  };
-
+ 
   const orderButtonHandler = () => {
     console.log("Food Ordered.");
   };
@@ -30,7 +26,7 @@ const Cart = (props) => {
         <h2>{totalAmount}</h2>
       </div>
       <div className={styles.controls}>
-        <Button onClick={closeButtonHandler} className={styles.close}>
+        <Button onClick={props.onCloseCart} className={styles.close}>
           Close
         </Button>
         <Button onClick={orderButtonHandler}>Order</Button>

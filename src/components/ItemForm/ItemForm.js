@@ -34,7 +34,7 @@ const ItemForm = (props) => {
         <Input
           label="Amount"
           input={{
-            id: "amount",
+            id: "amount " + props.item.id,
             type: "number",
             min: "0",
             max: "10",

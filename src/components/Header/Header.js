@@ -4,15 +4,12 @@ import CartButton from "../CartButton/CartButton";
 import mealPhoto from "../../assets/meals.jpg";
 
 const Header = (props) => {
-  const cartButtonHandler = () => {
-    props.onViewCart();
-  };
 
   return (
     <React.Fragment>
       <header className={styles.header}>
         <h1>Order Food</h1>
-        <CartButton onViewCart={cartButtonHandler} />
+        <CartButton onViewCart={props.onViewCart} />
       </header>
       <div className={styles.image}>
         <img src={mealPhoto} alt='Delicious Food!'></img>

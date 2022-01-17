@@ -10,9 +10,28 @@
 
 .modal {
   position: fixed;
-  top: 30vh;
+  top: 20vh;
   left: 10%;
   width: 80%;
   z-index: 100;
   overflow: hidden;
+  animation: slide-down 300ms ease-out forwards;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .modal {
+    width: 40rem;
+    left: calc(50% - 20rem);
+  }
 }
