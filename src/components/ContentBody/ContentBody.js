@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ContentBody.module.css";
 import Header from "../Header/Header";
 import Banner from "../Banner/Banner";
@@ -7,7 +7,19 @@ import Cart from "../Cart/Cart";
 
 const ContentBody = (props) => {
   const [viewCart, setViewCart] = useState(false);
-  const [cartContents, setCartContents] = useState("");
+  const [cartContents, setCartContents] = useState([{quantity: 0}]);
+  const [cartQuantity, setCartQuantity] = useState(0);
+
+  // calculating quantity is fucked. Need to look into contect for cart instead of state.
+  
+useEffect(() => {
+  const totalQuantity = cartContents
+  .map((item) => item.quantity)
+  .reduce((prev, next) => prev + next);
+
+    console.log("cart quantity");
+    console.log(totalQuantity);
+}, [cartContents]);
 
   const viewCartHandler = () => {
     setViewCart(true);
@@ -22,7 +34,6 @@ const ContentBody = (props) => {
       return [...prevContents, item];
     });
 
-    console.log(cartContents);
   };
 
   return (

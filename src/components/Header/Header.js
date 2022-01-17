@@ -1,6 +1,7 @@
+import React from "react";
 import styles from "./Header.module.css";
 import CartButton from "../CartButton/CartButton";
-import mealPhoto from "./meals.jpg";
+import mealPhoto from "../../assets/meals.jpg";
 
 const Header = (props) => {
   const cartButtonHandler = () => {
@@ -8,15 +9,15 @@ const Header = (props) => {
   };
 
   return (
-    <div>
-      <div className={styles.header}>
+    <React.Fragment>
+      <header className={styles.header}>
         <h1>Order Food</h1>
         <CartButton onViewCart={cartButtonHandler} />
-      </div>
+      </header>
       <div className={styles.image}>
-        <img src={mealPhoto}></img>
+        <img src={mealPhoto} alt='Delicious Food!'></img>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
