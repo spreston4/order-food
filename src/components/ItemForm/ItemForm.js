@@ -1,37 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./ItemForm.module.css";
 import Button from "../UI/Button/Button";
 import Input from "../UI/Input/Input";
 
 const ItemForm = (props) => {
-  const [quantity, setQuantity] = useState(0);
+  const [amountIsValid, setAmountIsValid] = useState(true);
 
-  const quantityHandler = (event) => {
-    setQuantity(event.target.value);
-  };
+  const amountInputRef = useRef();
 
   const addItemHandler = (event) => {
     event.preventDefault();
 
-    if (quantity < 1) {
-      console.log("Enter a valid quantity");
-      setQuantity(0);
+    const enteredAmount = amountInputRef.current.value;
+    const enteredAmountNumber = +enteredAmount;
+
+    if (
+      enteredAmount.trim().length === 0 ||
+      enteredAmountNumber < 1 ||
+      enteredAmountNumber > 10
+    ) {
+      setAmountIsValid(false);
       return;
     }
 
-    const newItem = {
-      ...props.item,
-      quantity: quantity,
-    };
-
-    props.onAddToCart(newItem);
-    setQuantity(0);
+    props.onAddToCart(enteredAmountNumber);
   };
 
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={addItemHandler}>
       <div>
         <Input
+          ref={amountInputRef}
           label="Amount"
           input={{
             id: "amount " + props.item.id,
@@ -39,12 +38,11 @@ const ItemForm = (props) => {
             min: "0",
             max: "10",
             step: "1",
-            value: quantity,
-            onChange: quantityHandler,
           }}
         />
       </div>
-      <Button onClick={addItemHandler}>+ Add</Button>
+      <Button type="submit">+ Add</Button>
+      {!amountIsValid && <p>Please entter a valid amount (1-10).</p>}
     </form>
   );
 };

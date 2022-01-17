@@ -1,9 +1,18 @@
+import React, { useContext } from "react";
 import styles from "./MenuItem.module.css";
+import CartContext from "../../store/cart-context";
 import ItemForm from "../ItemForm/ItemForm";
 
 const MenuItem = (props) => {
-  const addItemHandler = (item) => {
-    props.onAddToCart(item);
+  const cartCtx = useContext(CartContext);
+
+  const addToCartHandler = (amount) => {
+    cartCtx.addItem({
+      id: props.item.id,
+      name: props.item.name,
+      amount: amount,
+      price: props.item.price,
+    });
   };
 
   const price = `$${props.item.price.toFixed(2)}`;
@@ -16,7 +25,7 @@ const MenuItem = (props) => {
         <p className={styles.price}>{price}</p>
       </div>
       <div>
-        <ItemForm onAddToCart={addItemHandler} item={props.item} />
+        <ItemForm onAddToCart={addToCartHandler} item={props.item} />
       </div>
     </div>
   );
