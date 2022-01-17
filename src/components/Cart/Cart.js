@@ -12,11 +12,8 @@ const Cart = (props) => {
     console.log("Food Ordered.");
   };
 
-  // calculate total value of cart
-  //   const totalAmount = props.contents
-  //     .map((item) => item.quantity * item.price)
-  //     .reduce((prev, next) => prev + next);
-
+const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+const hasItems = cartCtx.items.length > 0;
   return (
     <Modal className={styles.cart}>
       <div>
@@ -26,13 +23,13 @@ const Cart = (props) => {
       </div>
       <div className={styles.amount}>
         <h2>Total Amount</h2>
-        {/* <h2>{totalAmount}</h2> */}
+        <h2>{totalAmount}</h2>
       </div>
       <div className={styles.controls}>
         <Button onClick={props.onCloseCart} className={styles.close}>
           Close
         </Button>
-        <Button onClick={orderButtonHandler}>Order</Button>
+        {hasItems && <Button onClick={orderButtonHandler}>Order</Button>}
       </div>
     </Modal>
   );
