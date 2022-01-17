@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./ItemForm.module.css";
 import Button from "../UI/Button/Button";
+import Input from "../UI/Input/Input";
 
 const ItemForm = (props) => {
   const [quantity, setQuantity] = useState(0);
@@ -30,13 +31,18 @@ const ItemForm = (props) => {
   return (
     <form className={styles.form}>
       <div>
-        <label>Amount</label>
-        <input
-          type="number"
-          min="0"
-          onChange={quantityHandler}
-          value={quantity}
-        ></input>
+        <Input
+          label="Amount"
+          input={{
+            id: "amount",
+            type: "number",
+            min: "0",
+            max: "10",
+            step: "1",
+            value: quantity,
+            onChange: quantityHandler,
+          }}
+        />
       </div>
       <Button onClick={addItemHandler}>+ Add</Button>
     </form>
