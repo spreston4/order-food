@@ -13,7 +13,12 @@ const Cart = (props) => {
   };
 
   const addItemHandler = (item) => {
-      cartCtx.addItem(item);
+      cartCtx.addItem({
+          id: item.id,
+          name: item.name,
+          amount: 1,
+          price: item.price,
+      });
   };
 
   const orderButtonHandler = () => {
