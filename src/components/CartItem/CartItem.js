@@ -7,10 +7,13 @@ const CartItem = (props) => {
         <p className={styles.name}>{props.item.name}</p>
         <div className={styles.detail}>
           <p className={styles.price}>${props.item.price}</p>
-          <p className={styles.quantity}>x {props.item.quantity}</p>
+          <p className={styles.quantity}>x {props.item.amount}</p>
         </div>
       </div>
-      <p>Controls</p>
+      <div className={styles.controls}>
+        <button onClick={props.onRemove}>-</button>
+        <button onClick={props.onAdd}>+</button>
+      </div>
     </div>
   );
 };
