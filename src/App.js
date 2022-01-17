@@ -1,10 +1,11 @@
+import React from "react";
 import ContentBody from "./components/ContentBody/ContentBody";
 
 function App() {
   return (
-    <div>
+    <React.Fragment>
       <ContentBody />
-    </div>
+    </React.Fragment>
   );
 }
 
