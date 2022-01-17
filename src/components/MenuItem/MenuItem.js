@@ -6,12 +6,14 @@ const MenuItem = (props) => {
     props.onAddToCart(item);
   };
 
+  const price = `$${props.item.price.toFixed(2)}`;
+
   return (
     <div className={styles.item}>
       <div>
         <p className={styles.name}>{props.item.name}</p>
         <p className={styles.description}>{props.item.description}</p>
-        <p className={styles.price}>{props.item.price}</p>
+        <p className={styles.price}>{price}</p>
       </div>
       <div>
         <ItemForm onAddToCart={addItemHandler} item={props.item} />
