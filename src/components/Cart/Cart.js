@@ -8,17 +8,26 @@ import CartItem from "../CartItem/CartItem";
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
 
+  const removeItemHandler = () => {};
+
+  const addItemHandler = () => {};
+
   const orderButtonHandler = () => {
     console.log("Food Ordered.");
   };
 
-const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
-const hasItems = cartCtx.items.length > 0;
+  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+  const hasItems = cartCtx.items.length > 0;
   return (
     <Modal className={styles.cart}>
-      <div>
+      <div className={styles.items}>
         {cartCtx.items.map((item) => (
-          <CartItem key={item.id} item={item} />
+          <CartItem
+            key={item.id}
+            item={item}
+            onRemove={removeItemHandler.bind(null, item.id)}
+            onAdd={addItemHandler.bind(null, item)}
+          />
         ))}
       </div>
       <div className={styles.amount}>

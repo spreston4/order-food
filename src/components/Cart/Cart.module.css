@@ -2,6 +2,11 @@
   font-size: large;
 }
 
+/* .items {
+  max-height: 25rem;
+  overflow: scroll;
+} */
+
 .amount {
   display: flex;
   flex-direction: row;
