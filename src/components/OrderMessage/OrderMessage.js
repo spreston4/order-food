@@ -8,7 +8,7 @@ import Button from "../UI/Button/Button";
 const OrderMessage = (props) => {
   const cartCtx = useContext(CartContext);
 
-  const clearMessageHandler = () => {
+  const clearItemsHandler = () => {
     cartCtx.emptyCart();
     props.onCloseMessage();
   };
@@ -19,7 +19,7 @@ const OrderMessage = (props) => {
       <p>Your food will be ready in approximately ∞ minutes.</p>
       <p>Would you like to clear your cart?</p>
       <div className={styles.controls}>
-        <Button onClick={clearMessageHandler} className={styles.alt}>
+        <Button onClick={clearItemsHandler} className={styles.alt}>
           Clear my cart
         </Button>
         <Button onClick={props.onCloseMessage}>Keep my items</Button>

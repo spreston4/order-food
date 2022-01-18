@@ -33,9 +33,8 @@ const Cart = (props) => {
   };
 
   const closeOrderMessageHandler = () => {
-      setOrderMessage(false);
+    setOrderMessage(false);
   };
-
 
   // Ensure the price always diplays to 2 decimal places
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
@@ -45,9 +44,13 @@ const Cart = (props) => {
 
   return (
     <Modal className={styles.cart}>
-        {orderMessage && <OrderMessage onCloseMessage={closeOrderMessageHandler} />}
+      {orderMessage && (
+        <OrderMessage onCloseMessage={closeOrderMessageHandler} />
+      )}
       <div className={styles.items}>
-        {!hasItems && <p className={styles.empty}>There are no items in your cart!</p>}
+        {!hasItems && (
+          <p className={styles.empty}>There are no items in your cart!</p>
+        )}
         {cartCtx.items.map((item) => (
           <CartItem
             key={item.id}

@@ -21,7 +21,9 @@ const ContentBody = (props) => {
   return (
     <div className={styles.content}>
       <CartProvider>
-        {viewCart && <Cart onCloseCart={closeCartHandler} />}
+        {viewCart && (
+          <Cart onCloseCart={closeCartHandler} onOpenCart={viewCartHandler} />
+        )}
         <Header onViewCart={viewCartHandler} />
         <Banner />
         <Menu />
