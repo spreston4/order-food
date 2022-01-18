@@ -1,13 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./Cart.module.css";
 import CartContext from "../../store/cart-context";
 import Modal from "../UI/Modal/Modal";
 import Button from "../UI/Button/Button";
 import CartItem from "../CartItem/CartItem";
+import OrderMessage from "../OrderMessage/OrderMessage";
 
 // Displays all CartItems to the user - updates CartContext when item amounts are changed from CartItem
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
+  const [orderMessage, setOrderMessage] = useState(false);
 
   const removeItemHandler = (id) => {
     cartCtx.removeItem(id);
@@ -27,8 +29,13 @@ const Cart = (props) => {
   };
 
   const orderButtonHandler = () => {
-    console.log("Food Ordered.");
+    setOrderMessage(true);
   };
+
+  const closeOrderMessageHandler = () => {
+      setOrderMessage(false);
+  };
+
 
   // Ensure the price always diplays to 2 decimal places
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
@@ -38,6 +45,7 @@ const Cart = (props) => {
 
   return (
     <Modal className={styles.cart}>
+        {orderMessage && <OrderMessage onCloseMessage={closeOrderMessageHandler} />}
       <div className={styles.items}>
         {!hasItems && <p className={styles.empty}>There are no items in your cart!</p>}
         {cartCtx.items.map((item) => (

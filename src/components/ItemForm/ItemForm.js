@@ -50,7 +50,7 @@ const ItemForm = (props) => {
           }}
         />
       </div>
-      <Button type="submit">+ Add</Button>
+      <Button type="submit">+ Add to Cart</Button>
       {!amountIsValid && (
         <ErrorMessage
           onClick={errorMessageHandler}
