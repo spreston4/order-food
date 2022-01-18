@@ -5,28 +5,33 @@ import Modal from "../UI/Modal/Modal";
 import Button from "../UI/Button/Button";
 import CartItem from "../CartItem/CartItem";
 
+// Displays all CartItems to the user - updates CartContext when item amounts are changed from CartItem
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
 
   const removeItemHandler = (id) => {
-      cartCtx.removeItem(id);
+    cartCtx.removeItem(id);
   };
 
   const addItemHandler = (item) => {
-      cartCtx.addItem({
-          id: item.id,
-          name: item.name,
-          amount: 1,
-          price: item.price,
-      });
+    cartCtx.addItem({
+      id: item.id,
+      name: item.name,
+      amount: 1,
+      price: item.price,
+    });
   };
 
   const orderButtonHandler = () => {
     console.log("Food Ordered.");
   };
 
+  // Ensure the price always diplays to 2 decimal places
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+
+  // Only show order button if Cart contains CartItems
   const hasItems = cartCtx.items.length > 0;
+
   return (
     <Modal className={styles.cart}>
       <div className={styles.items}>

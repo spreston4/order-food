@@ -1,3 +1,4 @@
+// Displays an icon to the CartButton
 const CartIcon = () => {
   return (
     <svg

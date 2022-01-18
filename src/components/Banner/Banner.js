@@ -1,6 +1,7 @@
 import styles from "./Banner.module.css";
 import Card from "../UI/Card/Card";
 
+// Displays Banner/Welcome message to the user
 const Banner = () => {
   return (
     <Card className={styles.banner}>

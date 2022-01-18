@@ -5,23 +5,10 @@ import Header from "../Header/Header";
 import Banner from "../Banner/Banner";
 import Menu from "../Menu/Menu";
 import Cart from "../Cart/Cart";
-import CartContext from "../../store/cart-context";
 
+// Displays Cart, Header, Banner & Menu to the user - provides CartProvider conext to all children - passes closeCartHandler to Cart & viewCartHandler to Header
 const ContentBody = (props) => {
   const [viewCart, setViewCart] = useState(false);
-  // const [cartContents, setCartContents] = useState([{ quantity: 0 }]);
-  // const [cartQuantity, setCartQuantity] = useState(0);
-
-  // calculating quantity is fucked. Need to look into contect for cart instead of state.
-
-  // useEffect(() => {
-  //   const totalQuantity = cartContents
-  //     .map((item) => item.quantity)
-  //     .reduce((prev, next) => prev + next);
-
-  //   console.log("cart quantity");
-  //   console.log(totalQuantity);
-  // }, [cartContents]);
 
   const viewCartHandler = () => {
     setViewCart(true);
@@ -31,18 +18,10 @@ const ContentBody = (props) => {
     setViewCart(false);
   };
 
-  // const addItemHandler = (item) => {
-  //   setCartContents((prevContents) => {
-  //     return [...prevContents, item];
-  //   });
-  // };
-
   return (
     <div className={styles.content}>
       <CartProvider>
-        {viewCart && (
-          <Cart onCloseCart={closeCartHandler} />
-        )}
+        {viewCart && <Cart onCloseCart={closeCartHandler} />}
         <Header onViewCart={viewCartHandler} />
         <Banner />
         <Menu />

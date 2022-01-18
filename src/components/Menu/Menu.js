@@ -2,6 +2,7 @@ import styles from "./Menu.module.css";
 import Card from "../UI/Card/Card";
 import MenuItem from "../MenuItem/MenuItem";
 
+// Menu selection data
 const dummyMealData = [
   {
     id: "m1",
@@ -13,7 +14,7 @@ const dummyMealData = [
     id: "m2",
     name: "Schnitzel",
     description: "A german specialty!",
-    price: 16.50,
+    price: 16.5,
   },
   {
     id: "m3",
@@ -29,15 +30,12 @@ const dummyMealData = [
   },
 ];
 
-const Menu = (props) => {
-  const addItemHandler = (item) => {
-    props.onAddToCart(item);
-  };
-
+// Displays all MenuItems to the user - passes the meal.id as key & all meal data as item to MenuItem
+const Menu = () => {
   return (
     <Card className={styles.menu}>
       {dummyMealData.map((meal) => (
-        <MenuItem key={meal.id} item={meal} onAddToCart={addItemHandler} />
+        <MenuItem key={meal.id} item={meal} />
       ))}
     </Card>
   );

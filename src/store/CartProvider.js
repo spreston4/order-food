@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import CartContext from "./cart-context";
 
+// Initialize cart to be empty
 const defaultCartState = {
   items: [],
   totalAmount: 0,
@@ -33,14 +34,16 @@ const cartReducer = (state, action) => {
       updatedItems = state.items.concat(action.item);
     }
 
+    // Return updated cart
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
     };
   }
 
+  // REMOVE ITEM
   if (action.type === "REMOVE_ITEM") {
-
+    // Fnd existing item in cart
     const existingItemIndex = state.items.findIndex(
       (item) => item.id === action.id
     );
@@ -50,21 +53,26 @@ const cartReducer = (state, action) => {
     let updatedItems;
 
     if (existingCartItem.amount === 1) {
-        // Remove item from cart if it is the last item of its type
-        updatedItems = state.items.filter(item => item.id !== action.id);
-
+      // Remove item from cart if it is the last item of its type
+      updatedItems = state.items.filter((item) => item.id !== action.id);
     } else {
-        const updatedItem = {...existingCartItem, amount: existingCartItem.amount - 1};
-        updatedItems = [...state.items];
-        updatedItems[existingItemIndex] = updatedItem;
+      // Reuce amount by 1 if it's not the last item of its type
+      const updatedItem = {
+        ...existingCartItem,
+        amount: existingCartItem.amount - 1,
+      };
+      updatedItems = [...state.items];
+      updatedItems[existingItemIndex] = updatedItem;
     }
 
+    // Return updated cart
     return {
-        items: updatedItems,
-        totalAmount: updatedTotalAmount,
+      items: updatedItems,
+      totalAmount: updatedTotalAmount,
     };
   }
 
+  // Return empty cart on app startup
   return defaultCartState;
 };
 

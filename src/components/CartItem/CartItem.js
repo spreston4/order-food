@@ -1,5 +1,6 @@
 import styles from "./CartItem.module.css";
 
+// Displays all items added to the Cart - acccepts item as a prop
 const CartItem = (props) => {
   return (
     <div className={styles.item}>
