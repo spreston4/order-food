@@ -72,6 +72,11 @@ const cartReducer = (state, action) => {
     };
   }
 
+  // EMPTY CART
+  if (action.type === "EMPTY_CART") {
+    return defaultCartState;
+  }
+
   // Return empty cart on app startup
   return defaultCartState;
 };
@@ -90,11 +95,16 @@ const CartProvider = (props) => {
     dispatchCartAction({ type: "REMOVE_ITEM", id: id });
   };
 
+  const emptyCartHandler = () => {
+    dispatchCartAction({ type: "EMPTY_CART" });
+  };
+
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemHandler,
     removeItem: removeItemHandler,
+    emptyCart: emptyCartHandler,
   };
   return (
     <CartContext.Provider value={cartContext}>

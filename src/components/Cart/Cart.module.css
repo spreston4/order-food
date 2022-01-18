@@ -16,16 +16,22 @@
 
 .controls {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order {
+  display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.close {
+.alt {
   color: #8a2b06 !important;
   background-color: #ffffff !important;
   margin-right: 1rem;
 }
-.close:hover,
-.close:active {
+.alt:hover,
+.alt:active {
   background-color: #e7e7e7 !important;
 }

@@ -22,6 +22,10 @@ const Cart = (props) => {
     });
   };
 
+  const emptyCartHandler = () => {
+    cartCtx.emptyCart();
+  };
+
   const orderButtonHandler = () => {
     console.log("Food Ordered.");
   };
@@ -49,10 +53,19 @@ const Cart = (props) => {
         <h2>{totalAmount}</h2>
       </div>
       <div className={styles.controls}>
-        <Button onClick={props.onCloseCart} className={styles.close}>
-          Close
-        </Button>
-        {hasItems && <Button onClick={orderButtonHandler}>Order</Button>}
+        <div>
+          {hasItems && (
+            <Button onClick={emptyCartHandler} className={styles.alt}>
+              Empty Cart
+            </Button>
+          )}
+        </div>
+        <div className={styles.order}>
+          <Button onClick={props.onCloseCart} className={styles.alt}>
+            Close
+          </Button>
+          {hasItems && <Button onClick={orderButtonHandler}>Order</Button>}
+        </div>
       </div>
     </Modal>
   );
