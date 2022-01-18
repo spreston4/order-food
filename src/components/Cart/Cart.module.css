@@ -35,3 +35,10 @@
 .alt:active {
   background-color: #e7e7e7 !important;
 }
+
+.empty {
+  border-bottom: 1px solid #8a2b06;
+  margin-bottom: 0.25rem;
+  padding-bottom: 1rem;
+  font-size: small;
+}

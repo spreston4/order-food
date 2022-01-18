@@ -39,7 +39,7 @@ const Cart = (props) => {
   return (
     <Modal className={styles.cart}>
       <div className={styles.items}>
-        {!hasItems && <p>There are no items in your cart!</p>}
+        {!hasItems && <p className={styles.empty}>There are no items in your cart!</p>}
         {cartCtx.items.map((item) => (
           <CartItem
             key={item.id}
