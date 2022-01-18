@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Order Food
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Home](./public/assets/images/menu2.PNG)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+Order Food is a mock front end application for a restaraunt's ordering service. Customers can browse the restaraunt's menu and add items to their cart. Customers can view their cart at anytime to see all items that have been placed in the cart, and the total amount of their order. Customers can adjust the quantity of items from their cart, or choose to empty their cart alltogether. After placing their order, customers are given the option of clearing their cart contents, or leaving items in their cart for easy reordering.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* [Video demo of the Order Food application](https://watch.screencastify.com/v/izH4CPENhvxSTzTl4Y0s)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* [GitHub Repo for the Order Food application](https://github.com/spreston4/order-food)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Table of Contents
 
-### `npm run build`
+* [Intallation](#installation)
+* [Usage](#usage)
+* [Technologies Used](#technologies-used)
+* [Finished Product](#finished-product)
+* [Contact Me](#contact-me)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1.  Download the project to the location of your choice
+2.  Navigate to the project directory
+3.  From the root of the directory, install the project with the following command: 
+> npm install
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Navigate to the the project directory
+2. To run locally, run the following command from the root of the directory:
+>npm start
+3. The user is presented with the restaraunt's menu and an empty cart
+4. The user can select an amount of each item and press the 'Add to Cart' button to add items to their cart
+5. To view the cart, select the 'Your Cart' button in the top right corner
+6. Users can adjust the amount of each item in their cart by selecting the '+' and '-' buttons next to their items
+7. Users can clear their entire cart contents by selecting the 'Empty Cart' button
+8. Select the 'Close' button to close the cart and continue shopping
+9. Selecting the 'Order' button will display a confirmation message to the user and give them the option of clearing their cart, or keeping their items
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Technologies Used
 
-## Learn More
+Built in Visual Studio with:
+* React.js
+* JavaScript
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Finished Product
 
-### Code Splitting
+* [Video demo of the Order Food application](https://watch.screencastify.com/v/izH4CPENhvxSTzTl4Y0s)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+ ![Home](./public/assets/images/menu2.PNG)
 
-### Analyzing the Bundle Size
+ ![Cart](./public/assets/images/cart.PNG)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+ ![Order](./public/assets/images/order.PNG)
 
-### Making a Progressive Web App
+ ![Empty](./public/assets/images/empty.PNG)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+ ![Error](./public/assets/images/error.PNG)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contact Me
 
-### Deployment
+Questions, comments, or concerns about this project? Contact via e-mail or checkout my GitHub!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* GitHub: [spreston4](https://github.com/spreston4)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* E-mail: [sam.preston11@gmail.com](mailto:sam.preston11@gmail.com)
