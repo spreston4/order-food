@@ -4,3 +4,9 @@
   margin-top: 2rem;
   z-index: 2;
 }
+
+.messages p {
+  font-size: small;
+  font-weight: bold;
+  text-align: center;
+}
