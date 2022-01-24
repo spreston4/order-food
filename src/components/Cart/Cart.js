@@ -9,8 +9,9 @@ import Checkout from "../Checkout/Checkout";
 // Displays all CartItems to the user - updates CartContext when item amounts are changed from CartItem
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
-  const [orderMessage, setOrderMessage] = useState(false);
   const [checkout, setCheckout] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [didSubmit, setDidSubmit] = useState(false);
 
   const removeItemHandler = (id) => {
     cartCtx.removeItem(id);
@@ -37,15 +38,24 @@ const Cart = (props) => {
     setCheckout(false);
   };
 
-  const submitOrderHandler = (userData) => {
-    fetch("https://order-food-9b59a-default-rtdb.firebaseio.com/orders.json", {
-      method: "POST",
-      body: JSON.stringify({
-        user: userData,
-        orderedItems: cartCtx.items,
-        totalAmount: totalAmount,
-      }),
-    });
+  const submitOrderHandler = async (userData) => {
+    setIsSubmitting(true);
+
+    await fetch(
+      "https://order-food-9b59a-default-rtdb.firebaseio.com/orders.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          user: userData,
+          orderedItems: cartCtx.items,
+          totalAmount: totalAmount,
+        }),
+      }
+    );
+
+    setIsSubmitting(false);
+    setDidSubmit(true);
+    emptyCartHandler();
   };
 
   // Ensure the price always diplays to 2 decimal places
@@ -54,8 +64,9 @@ const Cart = (props) => {
   // Only show order button if Cart contains CartItems
   const hasItems = cartCtx.items.length > 0;
 
-  return (
-    <Modal className={styles.cart}>
+  // Content to return before an order is sumbitted
+  const cartContent = (
+    <React.Fragment>
       <div className={styles.items}>
         {!hasItems && (
           <p className={styles.empty}>There are no items in your cart!</p>
@@ -99,6 +110,28 @@ const Cart = (props) => {
           </div>
         </div>
       )}
+    </React.Fragment>
+  );
+
+  // Content to return while order is submtting
+  const isSubmittingContent = <p>Your order is processing</p>;
+
+  const didSubmitContent = (
+    <React.Fragment>
+      <p>Your order has been placed!</p>
+      <div className={styles.order}>
+        <Button onClick={props.onCloseCart} className={styles.alt}>
+          Close
+        </Button>
+      </div>
+    </React.Fragment>
+  );
+
+  return (
+    <Modal className={styles.cart}>
+      {!isSubmitting && !didSubmit && cartContent}
+      {isSubmitting && isSubmittingContent}
+      {!isSubmitting && didSubmit && didSubmitContent}
     </Modal>
   );
 };
