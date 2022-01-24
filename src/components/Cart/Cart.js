@@ -33,8 +33,19 @@ const Cart = (props) => {
     setCheckout(true);
   };
 
-  const confirmOrderHandler = () => {
+  const closeOrderHandler = () => {
     setCheckout(false);
+  };
+
+  const submitOrderHandler = (userData) => {
+    fetch("https://order-food-9b59a-default-rtdb.firebaseio.com/orders.json", {
+      method: "POST",
+      body: JSON.stringify({
+        user: userData,
+        orderedItems: cartCtx.items,
+        totalAmount: totalAmount,
+      }),
+    });
   };
 
   // Ensure the price always diplays to 2 decimal places
@@ -63,7 +74,14 @@ const Cart = (props) => {
         <h2>Total Amount</h2>
         <h2>{totalAmount}</h2>
       </div>
-      <div>{checkout && <Checkout onConfirmOrder={confirmOrderHandler} />}</div>
+      <div>
+        {checkout && (
+          <Checkout
+            onConfirmOrder={submitOrderHandler}
+            onCloseOrder={closeOrderHandler}
+          />
+        )}
+      </div>
       {!checkout && (
         <div className={styles.controls}>
           <div>

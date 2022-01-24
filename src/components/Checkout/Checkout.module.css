@@ -4,10 +4,12 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  margin: 1rem 0;
+  height: 19rem;
 }
 
 .control {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .control input,
@@ -17,7 +19,7 @@
 
 .control label {
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .control input,
@@ -27,7 +29,7 @@
   padding: 0.5rem;
   border-radius: 4px;
   border: 1px solid #ccc;
-  width: 15rem;
+  width: 17rem;
   max-width: 100%;
 }
 
@@ -46,10 +48,18 @@
   font-size: small;
 }
 
-.buttons {
-  width: 100%;
+.actions {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.alt {
+  color: #8a2b06 !important;
+  background-color: #ffffff !important;
+}
+.alt:hover,
+.alt:active {
+  background-color: #e7e7e7 !important;
 }

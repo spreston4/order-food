@@ -90,7 +90,17 @@ const Checkout = (props) => {
       return;
     }
 
-    props.onConfirmOrder();
+    const userDetails = {
+      name: enteredName.toLocaleUpperCase(),
+      email: enteredEmail.toLocaleUpperCase(),
+      phone: enteredPhone,
+      address: enteredAddress.toLocaleUpperCase(),
+      city: enteredCity.toLocaleUpperCase(),
+      state: enteredState.toLocaleUpperCase(),
+      zip: enteredZip,
+    };
+
+    props.onConfirmOrder(userDetails);
 
     // Reset form
     nameResetHandler();
@@ -103,9 +113,8 @@ const Checkout = (props) => {
   };
 
   // If user chooses to go back instead of confirming their order
-  const goBackHandler = (event) => {
-    event.preventDefault();
-    props.onConfirmOrder();
+  const cancelOrderHandler = () => {
+    props.onCloseOrder();
   };
 
   // Conditional formatting for inputs with errors
@@ -166,7 +175,6 @@ const Checkout = (props) => {
             onChange={phoneChangeHandler}
             onBlur={phoneBlurHandler}
             value={enteredPhone}
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             type="tel"
             id="phone"
           />
@@ -237,13 +245,18 @@ const Checkout = (props) => {
           <p className={styles.error}>Zip Code field cannot be blank.</p>
         )}
       </div>
-      <div className={styles.buttons}></div>
-      <Button onClick={goBackHandler} type="button">
-        Go Back
-      </Button>
-      <Button disabled={!formIsValid} type="submit">
-        Confirm Order
-      </Button>
+      <div className={styles.actions}>
+        <Button
+          className={styles.alt}
+          onClick={cancelOrderHandler}
+          type="button"
+        >
+          Cancel
+        </Button>
+        <Button disabled={!formIsValid} type="submit">
+          Confirm Order
+        </Button>
+      </div>
     </form>
   );
 };
