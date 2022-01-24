@@ -1,31 +1,55 @@
 .checkout {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .control {
-    margin-bottom: 1rem;
-  }
-  
-  .control input,
-  .control label {
-    display: block;
-  }
-  
-  .control label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  .control input,
-  .control select {
-    font: inherit;
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    width: 15rem;
-    max-width: 100%;
-  }
+  margin-bottom: 1rem;
+}
+
+.control input,
+.control label {
+  display: block;
+}
+
+.control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.control input,
+.control select {
+  font: inherit;
+  font-size: small;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 15rem;
+  max-width: 100%;
+}
+
+.invalid input {
+  border: 1px solid #b40e0e;
+  background-color: #fddddd;
+}
+
+.invalid input:focus {
+  border-color: #ff8800;
+  background-color: #fbe8d2;
+}
+
+.error {
+  color: #b40e0e;
+  font-size: small;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

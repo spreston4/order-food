@@ -37,7 +37,6 @@ const Cart = (props) => {
     setCheckout(false);
   };
 
-
   // Ensure the price always diplays to 2 decimal places
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
 

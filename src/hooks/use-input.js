@@ -1,33 +1,37 @@
 import { useState } from "react";
 
+// Resuable hook to validate input of a form - accepts a function that's used to validate the input
 const useInput = (validationFunction) => {
-    const [enteredValue, setEnteredValue] = useState('');
-    const [isTouched, setIsTouched] = useState(false);
+  const [enteredValue, setEnteredValue] = useState("");
+  const [isTouched, setIsTouched] = useState(false);
 
-    const isValid = validationFunction(enteredValue);
-    const hasError = !isValid && isTouched;
+  // If input meets validationFunction criteria, it is valid
+  const isValid = validationFunction(enteredValue);
 
-    const valueChangeHandler = (event) => {
-        setEnteredValue(event.target.value);
-    };
+  // Error only occurs if input does not meet validation criterea & user has touched the input
+  const hasError = !isValid && isTouched;
 
-    const inputBlurHandler = (event) => {
-        setIsTouched(true);
-    };
+  const valueChangeHandler = (event) => {
+    setEnteredValue(event.target.value);
+  };
 
-    const resetHandler = () => {
-        setEnteredValue('');
-        setIsTouched(false);
-    };
+  const inputBlurHandler = (event) => {
+    setIsTouched(true);
+  };
 
-    return {
-        value: enteredValue,
-        isValid,
-        hasError,
-        valueChangeHandler,
-        inputBlurHandler,
-        resetHandler,
-    };
+  const resetHandler = () => {
+    setEnteredValue("");
+    setIsTouched(false);
+  };
+
+  return {
+    value: enteredValue,
+    isValid,
+    hasError,
+    valueChangeHandler,
+    inputBlurHandler,
+    resetHandler,
+  };
 };
 
 export default useInput;

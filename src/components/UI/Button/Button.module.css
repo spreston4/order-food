@@ -14,3 +14,12 @@
   background-color: #641e03;
   border-color: #641e03;
 }
+
+.button:disabled,
+.button:disabled:hover,
+.button:disabled:active {
+  background-color: #cccccc;
+  color: #292929;
+  border-color: #cccccc;
+  cursor: not-allowed;
+}
