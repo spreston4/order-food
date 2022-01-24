@@ -44,3 +44,8 @@
   padding-bottom: 1rem;
   font-size: small;
 }
+
+.delivery p {
+  font-size: small;
+  margin: 0.15rem;
+}
