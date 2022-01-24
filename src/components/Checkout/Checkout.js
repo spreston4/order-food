@@ -101,8 +101,9 @@ const Checkout = (props) => {
     };
 
     props.onConfirmOrder(userDetails);
+  };
 
-    // Reset form
+  const resetFormHandler = () => {
     nameResetHandler();
     emailResetHandler();
     phoneResetHandler();
@@ -158,6 +159,9 @@ const Checkout = (props) => {
             type="text"
             id="name"
           />
+          {nameHasError && (
+            <p className={styles.error}>Name field cannot be blank.</p>
+          )}
         </div>
         <div className={emailClasses}>
           <label htmlFor="city">E-mail</label>
@@ -168,6 +172,9 @@ const Checkout = (props) => {
             type="email"
             id="email"
           />
+          {emailHasError && (
+            <p className={styles.error}>Enter a valid e-mail address.</p>
+          )}
         </div>
         <div className={phoneClasses}>
           <label htmlFor="phone">Phone Number</label>
@@ -178,6 +185,11 @@ const Checkout = (props) => {
             type="tel"
             id="phone"
           />
+          {phoneHasError && (
+            <p className={styles.error}>
+              Enter a valid phone number xxx-xxx-xxxx.
+            </p>
+          )}
         </div>
         <div className={addressClasses}>
           <label htmlFor="address">Street Address</label>
@@ -188,6 +200,11 @@ const Checkout = (props) => {
             type="text"
             id="address"
           />
+          {addressHasError && (
+            <p className={styles.error}>
+              Street Address field cannot be blank.
+            </p>
+          )}
         </div>
         <div className={cityClasses}>
           <label htmlFor="city">City</label>
@@ -198,16 +215,22 @@ const Checkout = (props) => {
             type="text"
             id="city"
           />
+          {cityHasError && (
+            <p className={styles.error}>City field cannot be blank.</p>
+          )}
         </div>
         <div className={stateClasses}>
-          <label htmlFor="city">State</label>
+          <label htmlFor="state">State</label>
           <input
             onChange={stateChangeHandler}
             onBlur={stateBlurHandler}
             value={enteredState}
             type="text"
-            id="State"
+            id="state"
           />
+          {stateHasError && (
+            <p className={styles.error}>State field cannot be blank.</p>
+          )}
         </div>
         <div className={zipClasses}>
           <label htmlFor="zip">Zip Code</label>
@@ -218,33 +241,12 @@ const Checkout = (props) => {
             type="text"
             id="zip"
           />
+          {zipHasError && (
+            <p className={styles.error}>Zip Code field cannot be blank.</p>
+          )}
         </div>
       </div>
-      <div>
-        {nameHasError && (
-          <p className={styles.error}>Name field cannot be blank.</p>
-        )}
-        {emailHasError && (
-          <p className={styles.error}>Enter a valid e-mail address.</p>
-        )}
-        {phoneHasError && (
-          <p className={styles.error}>
-            Enter a valid phone number xxx-xxx-xxxx.
-          </p>
-        )}
-        {addressHasError && (
-          <p className={styles.error}>Street Address field cannot be blank.</p>
-        )}
-        {cityHasError && (
-          <p className={styles.error}>City field cannot be blank.</p>
-        )}
-        {stateHasError && (
-          <p className={styles.error}>State field cannot be blank.</p>
-        )}
-        {zipHasError && (
-          <p className={styles.error}>Zip Code field cannot be blank.</p>
-        )}
-      </div>
+
       <div className={styles.actions}>
         <Button
           className={styles.alt}
@@ -252,6 +254,9 @@ const Checkout = (props) => {
           type="button"
         >
           Cancel
+        </Button>
+        <Button className={styles.alt} onClick={resetFormHandler} type="button">
+          Reset Form
         </Button>
         <Button disabled={!formIsValid} type="submit">
           Confirm Order
