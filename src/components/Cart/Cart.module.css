@@ -1,5 +1,8 @@
 .cart {
   font-size: large;
+  max-height: 35rem;
+  overflow-y: auto;
+  /* visibility: hidden; */
 }
 
 /* .items {

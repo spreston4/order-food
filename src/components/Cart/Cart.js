@@ -4,7 +4,6 @@ import CartContext from "../../store/cart-context";
 import Modal from "../UI/Modal/Modal";
 import Button from "../UI/Button/Button";
 import CartItem from "../CartItem/CartItem";
-// import OrderMessage from "../OrderMessage/OrderMessage";
 import Checkout from "../Checkout/Checkout";
 
 // Displays all CartItems to the user - updates CartContext when item amounts are changed from CartItem
@@ -38,9 +37,6 @@ const Cart = (props) => {
     setCheckout(false);
   };
 
-  // const closeOrderMessageHandler = () => {
-  //   setOrderMessage(false);
-  // };
 
   // Ensure the price always diplays to 2 decimal places
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
@@ -50,9 +46,6 @@ const Cart = (props) => {
 
   return (
     <Modal className={styles.cart}>
-      {/* {orderMessage && (
-        <OrderMessage onCloseMessage={closeOrderMessageHandler} />
-      )} */}
       <div className={styles.items}>
         {!hasItems && (
           <p className={styles.empty}>There are no items in your cart!</p>
