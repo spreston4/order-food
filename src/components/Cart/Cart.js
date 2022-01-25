@@ -44,6 +44,7 @@ const Cart = (props) => {
     setCheckout(false);
   };
 
+  // Called when user closes their order confirmation message, clears cart
   const closeOrderDetailsHandler = () => {
     emptyCartHandler();
     props.onCloseCart();

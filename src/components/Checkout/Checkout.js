@@ -32,7 +32,7 @@ const Checkout = (props) => {
     inputBlurHandler: phoneBlurHandler,
     resetHandler: phoneResetHandler,
   } = useInput((value) =>
-    value.match(/^[(][0-9]{3}[)][\s][0-9]{3}[-][0-9]{4}$/)
+    value.trim().match(/^[(][0-9]{3}[)][\s][0-9]{3}[-][0-9]{4}$/)
   );
 
   const {

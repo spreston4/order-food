@@ -27,7 +27,7 @@ const ItemForm = (props) => {
       setAmountIsValid(false);
       return;
     }
-    
+
     props.onAddToCart(enteredAmountNumber);
   };
 
