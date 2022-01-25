@@ -21,7 +21,7 @@ const Checkout = (props) => {
     inputBlurHandler: emailBlurHandler,
     resetHandler: emailResetHandler,
   } = useInput((value) =>
-    value.trim().match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)
+    value.trim().match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/i)
   );
 
   const {
@@ -60,7 +60,13 @@ const Checkout = (props) => {
     valueChangeHandler: stateChangeHandler,
     inputBlurHandler: stateBlurHandler,
     resetHandler: stateResetHandler,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput((value) =>
+    value
+      .trim()
+      .match(
+        /(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|PA|RI|S[CD]|T[NX]|UT|V[AT]|W[AIVY])/gim
+      )
+  );
 
   const {
     value: enteredZip,
@@ -233,7 +239,7 @@ const Checkout = (props) => {
             id="state"
           />
           {stateHasError && (
-            <p className={styles.error}>State field cannot be blank.</p>
+            <p className={styles.error}>Enter a valid state abbreviation: XX</p>
           )}
         </div>
         <div className={zipClasses}>
