@@ -20,7 +20,9 @@ const Checkout = (props) => {
     valueChangeHandler: emailChangeHandler,
     inputBlurHandler: emailBlurHandler,
     resetHandler: emailResetHandler,
-  } = useInput((value) => value.trim().includes("@"));
+  } = useInput((value) =>
+    value.trim().match(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)
+  );
 
   const {
     value: enteredPhone,
