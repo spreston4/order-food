@@ -29,7 +29,9 @@ const Checkout = (props) => {
     valueChangeHandler: phoneChangeHandler,
     inputBlurHandler: phoneBlurHandler,
     resetHandler: phoneResetHandler,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput((value) =>
+    value.match(/^[(][0-9]{3}[)][\s][0-9]{3}[-][0-9]{4}$/)
+  );
 
   const {
     value: enteredAddress,
@@ -187,7 +189,7 @@ const Checkout = (props) => {
           />
           {phoneHasError && (
             <p className={styles.error}>
-              Enter a valid phone number xxx-xxx-xxxx.
+              Enter a valid phone number: (xxx) xxx-xxxx
             </p>
           )}
         </div>
