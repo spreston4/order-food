@@ -6,7 +6,7 @@
 
 Order Food is a mock front end application for a restaraunt's ordering service. Customers can browse the restaraunt's menu and add items to their cart. Customers can view their cart at anytime to see all items that have been placed in the cart, and the total amount of their order. Customers can adjust the quantity of items from their cart, or choose to empty their cart alltogether. After placing their order, customers are prompted to enter their delivery address & asked to confirm their order. After confirming their order, customers are presented a confirmation message containing their delivery & order details. Menu items are populated from a Firebase Realtime Database. All confirmed orders are sent to the Firebase Realtime Database.
 
-- [Live Order Food Application](https://spreston4.github.io/order-food/)
+- [Deployed Order Food Application](https://spreston4.github.io/order-food/)
 
 - [GitHub Repo for the Order Food application](https://github.com/spreston4/order-food)
 
@@ -58,7 +58,7 @@ Built in Visual Studio with:
 
 ## Finished Product
 
-- [Live Order Food Application](https://spreston4.github.io/order-food/)
+- [Deployed Order Food Application](https://spreston4.github.io/order-food/)
 
 ![Home](./public/assets/images/menu2.PNG)
 

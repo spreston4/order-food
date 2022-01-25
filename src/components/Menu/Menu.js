@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import styles from "./Menu.module.css";
 import Card from "../UI/Card/Card";
 import MenuItem from "../MenuItem/MenuItem";
