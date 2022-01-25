@@ -75,7 +75,7 @@ const Checkout = (props) => {
     valueChangeHandler: zipChangeHandler,
     inputBlurHandler: zipBlurHandler,
     resetHandler: zipResetHandler,
-  } = useInput((value) => value.trim() !== "");
+  } = useInput((value) => value.trim().match(/^\d{5}$/));
 
   // Form is valid only if all inputs are valid
   let formIsValid = false;
@@ -252,7 +252,7 @@ const Checkout = (props) => {
             id="zip"
           />
           {zipHasError && (
-            <p className={styles.error}>Zip Code field cannot be blank.</p>
+            <p className={styles.error}>Enter a valid Zip Code: XXXXX</p>
           )}
         </div>
       </div>
