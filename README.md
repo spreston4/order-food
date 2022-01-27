@@ -1,6 +1,6 @@
-# Order Food
+# [Order Food](https://spreston4.github.io/order-food/)
 
-![Home](./public/assets/images/menu2.PNG)
+![Home](./public/assets/images/banner.PNG)
 
 ## Description
 
