@@ -32,3 +32,9 @@
   object-fit: cover;
   transform: rotateZ(-5deg) translateY(-4rem) translateX(-3rem);
 }
+
+@media screen and (max-width: 1007px) {
+  .header {
+    padding: 0 5%;
+  }
+}

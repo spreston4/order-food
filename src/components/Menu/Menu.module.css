@@ -23,3 +23,9 @@
     transform: translateY(0);
   }
 }
+
+@media screen and (max-width: 1007px) {
+  .menu {
+    width: 90%;
+  }
+}

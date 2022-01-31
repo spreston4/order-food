@@ -9,3 +9,9 @@
   color: #ffffff;
   z-index: 2;
 }
+
+@media screen and (max-width: 1007px) {
+  .banner {
+    width: 90%;
+  }
+}

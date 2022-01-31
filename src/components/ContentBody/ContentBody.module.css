@@ -6,3 +6,9 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+@media screen and (max-width: 1007px) {
+  .content {
+    margin-top: 7rem;
+  }
+}
