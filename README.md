@@ -4,7 +4,7 @@
 
 ## Description
 
-Order Food is a mock front end application for a restaraunt's ordering service. Customers can browse the restaraunt's menu and add items to their cart. Customers can view their cart at anytime to see all items that have been placed in the cart, and the total amount of their order. Customers can adjust the quantity of items from their cart, or choose to empty their cart alltogether. After placing their order, customers are prompted to enter their delivery address & asked to confirm their order. After confirming their order, customers are presented a confirmation message containing their delivery & order details. Menu items are populated from a Firebase Realtime Database. All confirmed orders are sent to the Firebase Realtime Database.
+Order Food is a responsive, mobile friendly, mock front end application for a restaraunt's ordering service. Customers can browse the restaraunt's menu and add items to their cart. Customers can view their cart at anytime to see all items that have been placed in the cart, and the total amount of their order. Customers can adjust the quantity of items from their cart, or choose to empty their cart alltogether. After placing their order, customers are prompted to enter their delivery address & asked to confirm their order. After confirming their order, customers are presented a confirmation message containing their delivery & order details. Menu items are populated from a Firebase Realtime Database. All confirmed orders are sent to the Firebase Realtime Database.
 
 - [Deployed Order Food Application](https://spreston4.github.io/order-food/)
 
@@ -60,6 +60,8 @@ Built in Visual Studio with:
 
 - [Deployed Order Food Application](https://spreston4.github.io/order-food/)
 
+### Desktop Version
+
 ![Home](./public/assets/images/menu2.PNG)
 
 ![Cart](./public/assets/images/cart.PNG)
@@ -71,6 +73,14 @@ Built in Visual Studio with:
 ![Empty](./public/assets/images/empty.PNG)
 
 ![Error](./public/assets/images/error.PNG)
+
+### Mobile Version
+
+![Home - Mobile](./public/assets/images/mobile1.jpg)
+
+![Cart - Mobile](./public/assets/images/mobile2.jpg)
+
+![Confirmation - Mobile](./public/assets/images/mobile3.jpg)
 
 ## Contact Me
 
