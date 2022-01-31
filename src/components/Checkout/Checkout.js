@@ -192,7 +192,7 @@ const Checkout = (props) => {
             onChange={phoneChangeHandler}
             onBlur={phoneBlurHandler}
             value={enteredPhone}
-            type="tel"
+            type="text"
             id="phone"
           />
           {phoneHasError && (
@@ -255,22 +255,26 @@ const Checkout = (props) => {
             <p className={styles.error}>Enter a valid Zip Code: XXXXX</p>
           )}
         </div>
-      </div>
 
-      <div className={styles.actions}>
-        <Button
-          className={styles.alt}
-          onClick={cancelOrderHandler}
-          type="button"
-        >
-          Cancel
-        </Button>
-        <Button className={styles.alt} onClick={resetFormHandler} type="button">
-          Reset Form
-        </Button>
-        <Button disabled={!formIsValid} type="submit">
-          Confirm Order
-        </Button>
+        <div className={styles.actions}>
+          <Button
+            className={styles.alt}
+            onClick={cancelOrderHandler}
+            type="button"
+          >
+            Cancel
+          </Button>
+          <Button
+            className={styles.alt}
+            onClick={resetFormHandler}
+            type="button"
+          >
+            Reset Form
+          </Button>
+          <Button disabled={!formIsValid} type="submit">
+            Confirm Order
+          </Button>
+        </div>
       </div>
     </form>
   );
